@@ -55,7 +55,7 @@ module.exports = {
             )
             .catch((err) => res.status(500).json(err));
     }, 
-// Delete a thought
+// Delete one thought
 //needs work
     deleteThought(req, res) {
         Thought.findOneAndDelete({ _id: req.params.thoughtId })
@@ -71,7 +71,7 @@ module.exports = {
     createReaction(req, res) {
         Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
-        { $addToSet: { assignments: req.body } },
+        { $addToSet: { reaction: req.body } },
         { runValidators: true, new: true }
         )
         .then((thought) =>

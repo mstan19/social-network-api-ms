@@ -30,7 +30,7 @@ const thought = [
     'family road trippppp',
     'i am glad i woke up early enough to see the sunset',
     'hands down the best food ever',
-    'so i tried an escpe room today... it was actually pretty fun',
+    'so i tried an escape room today... it was actually pretty fun',
     'at the beach with the fam',
     'fun day at six flags',
     'i finally graduated!!!!',
