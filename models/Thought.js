@@ -1,34 +1,5 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 const moment = require('moment')
-
-// Schema to create a thought model
-const thoughtSchema = new Schema(
-  {
-    thoughtText: {
-      type: String,
-      minLength: 1,
-      maxLength: 280,
-      required: true,
-    },
-    //get
-    createdAt: {
-      type: Date,
-      default: Date.now(),
-      get: formatDate => moment(formatDate).format("MMM DD, YYYY [at] hh:mm a"),
-    },
-    username: {
-      type: String,
-      required: true,
-    },
-    reactions: [reactionSchema],
-  },
-  {
-    toJSON: {
-      virtuals: true,
-    },
-    id: false,
-  }
-);
 
 // Schema to create a reaction model
 const reactionSchema = new Schema(
@@ -60,9 +31,40 @@ const reactionSchema = new Schema(
     }
   );
 
-reactionSchema.virtual('reactionCount').get(function () {
-    return this.reactions.length;
-  });
+
+// Schema to create a thought model
+const thoughtSchema = new Schema(
+  {
+    thoughtText: {
+      type: String,
+      minLength: 1,
+      maxLength: 280,
+      required: true,
+    },
+    //get
+    createdAt: {
+      type: Date,
+      default: Date.now(),
+      get: formatDate => moment(formatDate).format("MMM DD, YYYY [at] hh:mm a"),
+    },
+    username: {
+      type: String,
+      required: true,
+    },
+    reaction: [reactionSchema],
+  },
+  {
+    toJSON: {
+      virtuals: true,
+      getters: true,
+    },
+    id: false,
+  }
+);
+
+thoughtSchema.virtual('reactionCount').get(function () {
+    return this.reaction.length;
+});
 
 const Thought = model('Thought', thoughtSchema);
 
