@@ -2,7 +2,7 @@ const { User, Thought } = require('../models');
 
 
 module.exports = {
-    // Get all users
+// Get all users
     getAllUsers(req, res) {
         User.find()
         .then((users) => res.json(users))
@@ -11,11 +11,11 @@ module.exports = {
           return res.status(500).json(err);
         });
     },
-     // Get one user
+// Get one user
   getOneUser(req, res) {
     User.findOne({ _id: req.params.userId })
         .populate("thought")
-        .populate("friends")
+        .populate("friend")
         .select('-__v')
         .then((user) =>
             !user
