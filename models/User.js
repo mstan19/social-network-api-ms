@@ -7,7 +7,6 @@ const userSchema = new Schema(
       type: String,
       unique: true,
       required: true,
-      //is this the same as trimmed?
       max_length: 50,
     },
     //need to validate

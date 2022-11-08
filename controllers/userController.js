@@ -102,7 +102,7 @@ updateUser(req, res) {
     // console.log(req.body);
     User.findOneAndUpdate(
       { _id: req.params.userId },
-      { $addToSet: { friend: req.params.friendId } },
+      { $addToSet: { friend: req.body.friendId } },
       { runValidators: true, new: true }
     )
       .then((user) =>
@@ -119,7 +119,7 @@ updateUser(req, res) {
 removeFriend(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId },
-      { $pull: { friend: { friendId: req.params.friendId } } },
+      { $pull: { friend: req.params.friendId } },
       { runValidators: true, new: true }
     )
       .then((user) =>
