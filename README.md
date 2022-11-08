@@ -24,7 +24,7 @@ To use this application, open the terminal, respective to the file. Run the ```n
 
 This is what the Social Network API's database looks like.
 //NEEDS PIC
-![Social Network API mock-up](./assets/images/)
+![Social Network API mock-up](./assets/images/mockuppic.png)
 
 ## License
 This application does not require any licenses.
