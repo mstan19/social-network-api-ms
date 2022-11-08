@@ -4,6 +4,7 @@ module.exports = {
     // Get all thoughts
     getAllThoughts(req, res) {
         Thought.find()
+            .select("-__v -reaction._id")
             .then((thought) => res.json(thought))
             .catch((err) => res.status(500).json(err));
         },

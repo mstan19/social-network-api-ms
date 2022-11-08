@@ -26,7 +26,7 @@ const email = [
 
 const thought = [
     'i am planning to travel sometime next year. These are my cuurent pics of the places that i have been to',
-    'my dog decided to get dirt when i went on the hike',
+    'my dog decided to get dirty when i went on the hike',
     'family road trippppp',
     'i am glad i woke up early enough to see the sunset',
     'hands down the best food ever',
@@ -51,7 +51,13 @@ const reaction = [
 ];
 
 // Get a random item given an array
-const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)]
+///remove an item after return  an item
+const getRandomArrItem = (arr) => {
+  let index = Math.floor(Math.random() * arr.length)
+  let x =  arr[index]
+  arr.splice(index, 1)
+  return x
+}
 
 const getRandomUsername = () =>
   `${getRandomArrItem(username)} `;
