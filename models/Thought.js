@@ -41,7 +41,6 @@ const thoughtSchema = new Schema(
       maxLength: 280,
       required: true,
     },
-    //get
     createdAt: {
       type: Date,
       default: Date.now(),

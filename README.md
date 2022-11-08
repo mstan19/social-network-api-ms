@@ -23,7 +23,7 @@ To create this project, follow these several steps. This application uses Node.j
 To use this application, open the terminal, respective to the file. Run the ```npm run seed``` to populate the data tables with its respective seeds. Finally, type this command in the terminal ```nodemon server.js``` to run the application. This allows the user to perform any HTTP method on blogs, user, and comments..
 
 This is what the Social Network API's database looks like.
-//NEEDS PIC
+
 ![Social Network API mock-up](./assets/images/mockuppic.png)
 
 ## License

@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-// Schema to create Student model
+// Schema to create user model
 const userSchema = new Schema(
   {
     username: {
@@ -9,17 +9,12 @@ const userSchema = new Schema(
       required: true,
       max_length: 50,
     },
-    //need to validate
     email: {
       type: String,
       required: true,
       unique: true,
       max_length: 50,
-      //match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/]
-    //   validate: {
-    //     validator:,
-    //     message: props => `${props.value} is not a valid email`
-    //   }
+      match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/]
     },
     thought: [
         {
