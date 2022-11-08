@@ -11,7 +11,7 @@
 -[Depolyment](#depolyment)
 
 ## Description of the Project
-The purpose of the application is to build API for a social network. This dynamic application allows users to post their thoughts and add friends. Each user has a username and valid email. Also, users can react to other users' thoughts; this is called reaction. This is done using HTTP requests: get, post, put, and delete when using user and thought models. This application uses moment to create the date when a user posts a thought or reaction. 
+The purpose of the application is to build API for a social network. This dynamic application allows users to post their thoughts and add friends. Each user has a username and valid email. Also, users can react to other users' thoughts; this is called reaction. This is done using HTTP requests: get, post, put, and delete when using user and thought models. If the user is deleted, then all of their assocaited thoughts will be deleted as well. This application uses moment to create the date when a user posts a thought or reaction. 
  
 This application uses Node.js, MongoDB, Mongoose, Moment, and Express to run the application. This application requires you to understand package.json and its node_modules. In additon to that, gitignore file is important to use so certain folders and files are not upload to GitHub. For example, node_modules should not be uploaded to GitHub since this folder gets created during the installition process. Lastly, this project stands out since the application has its own server and can effectively retrieve data from Mongo's database called social media database.
 
