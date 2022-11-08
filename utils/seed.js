@@ -7,18 +7,17 @@ connection.on('error', (err) => err);
 connection.once('open', async () => {
   console.log('connected');
 
-  // Drop existing courses
+  // Drop existing Thought
   await Thought.deleteMany({});
 
-  // Drop existing students
+  // Drop existing User
   await User.deleteMany({});
 
-  // Create empty array to hold the students
+  // Create empty array to hold the users
   const user = [];
   const thought = getRandomThought(10);
-  // Loop 20 times -- add students to the students array
+  // Loop 10 times -- add users to the users array
   for (let i = 0; i < 10; i++) {
-    // Get some random assignment objects using a helper function that we imported from ./data
     
 
     const username = getRandomUsername();
@@ -30,10 +29,10 @@ console.log(username)
     });
   }
 
-  // Add students to the collection and await the results
+  // Add user to the collection 
   await User.collection.insertMany(user);
 
-  // Add courses to the collection and await the results
+  // Add thought to the collection 
   await Thought.collection.insertOne({
     thoughtText: thought,
     user: [...user],
